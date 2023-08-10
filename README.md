@@ -125,6 +125,23 @@ resolve("https://deno.land", "std", "assert", "mod.ts", "../assert.ts");
 
 
 
+### strip
+
+Strips any hash (eg. `#header`) or search parameters (eg. `?foo=bar`) from the provided URL.
+
+*(Mutates the original url provided)*
+
+```ts
+import { strip } from "pathurl";
+const url = new URL("https://deno.land/std/assert/mod.ts?foo=bar#header");
+strip(url);
+// url is now "https://deno.land/std/assert/mod.ts"
+```
+
+
+
+
+
 ## Building
 
 - Clone this repository.
